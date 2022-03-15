@@ -1,22 +1,33 @@
 #include <stdio.h>
 #include <unistd.h>
 /**
- * main 
- * Description: prints all possible combinations of single-digit numbers
- * Return 0
- */
- int main(void)
+* times_table - that prints the 9 times table
+*
+* Return: no return
+*/
+void times_table(void)
 {
-	int i;
-	for (i = '0'; i <= '9'; i++)
+	int a, b, c;
+
+	for (a = 0; a <= 9; a++)
 	{
-		putchar(i);
-		if (i != '9')
+		_putchar(48);
+		for (b = 1; b <= 9; b++)
 		{
-			putchar(',');
-			putchar(' ');
+			c = a * b;
+			_putchar(44);
+			_putchar(32);
+			if (c <= 9)
+			{
+				_putchar(32);
+				_putchar(c + 48);
+			}
+			else
+			{
+				_putchar((c / 10) + 48);
+				_putchar((c % 10) + 48);
+			}
 		}
+	_putchar('\n');
 	}
-	putchar('\n');
-	return (0);
 }
